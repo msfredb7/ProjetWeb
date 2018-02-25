@@ -1,6 +1,7 @@
 ﻿body
 {
     font-family: Calibri;
+    background-image:url(../Images/perforated_bg.png)
 }
 
 .cComment
@@ -28,13 +29,13 @@
     background-color: #f6e0dd;
 }
 
-    code > a, .cNegative > a, .cPositive > a, .cKeyword > a, cClass > a
-    {
-        color: deepskyblue;
-        text-decoration: underline;
-        border: none;
-        font-weight: normal;
-    }
+.cLink
+{
+    color: deepskyblue;
+    text-decoration: underline;
+    border: none;
+    font-weight: normal;
+}
 
 code
 {
@@ -61,7 +62,9 @@ code
 
 .section
 {
-    background-color: aquamarine;
+    border: 12px solid transparent;
+    border-image-source: url(../Images/panel_bg.png);
+    border-image-slice: 15 fill;
     margin-left: auto;
     margin-right: auto;
 }
@@ -69,15 +72,20 @@ code
 .secAdapting
 {
     width: 75%;
-    padding: 20px;
+    padding: 25px 60px;
 }
 
 @media only screen and (max-width: 768px)
 {
     .secAdapting
     {
-        width: calc(100% - 20px);
-        padding-left: 10px;
-        padding-right: 10px;
+        width: calc(100% - 14px);
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+
+    body
+    {
+        margin: 0;
     }
 }
