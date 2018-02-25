@@ -1,7 +1,7 @@
 ﻿body
 {
     font-family: Calibri;
-    background-image:url(../Images/perforated_bg.png)
+    background-image: url(../Images/perforated_bg.png)
 }
 
 .cComment
@@ -79,7 +79,8 @@ code
 {
     .secAdapting
     {
-        border:none;
+        border: none;
+        background-color: white;
         width: calc(100% - 14px);
         padding-left: 7px;
         padding-right: 7px;
