@@ -1,0 +1,14 @@
+﻿body
+{
+    font-family:Chinacat thin;
+}
+
+a
+{
+    color:white;
+    border: 12px solid transparent;
+    border-image-source: url(../Images/green_button08.png);
+    border-image-slice: 16 fill;
+    text-decoration: none;
+    font-weight:bold;
+}
