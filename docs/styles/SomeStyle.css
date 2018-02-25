@@ -1,10 +1,4 @@
-﻿body
-{
-    font-family: Calibri;
-    background-image: url(../Images/perforated_bg.png)
-}
-
-.cComment
+﻿.cComment
 {
     color: #a9a9a9;
 }
@@ -37,27 +31,12 @@
     font-weight: normal;
 }
 
-code
+/*--------------TOP LEVEL--------------*/
+body
 {
-    border: 3px dashed #c4c4c4;
-    padding: 10px;
-    background-color: #f6f6f6;
-    font-family: monospace;
-    white-space: pre;
-    display: block;
-    overflow-x: auto;
-    margin: 15px 0px;
-}
-
-.button
-{
-    color: white;
-    border: 12px solid transparent;
-    border-image-source: url(../Images/green_button08.png);
-    border-image-slice: 16 fill;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
+    font-family: 'Open Sans', sans-serif;
+    background-image: url(../Images/perforated_bg.png);
+    font-size: 16px;
 }
 
 .section
@@ -75,11 +54,48 @@ code
     padding: 25px 60px;
 }
 
+/*--------------IN DOC--------------*/
+code
+{
+    border: 3px dashed #c4c4c4;
+    padding: 10px;
+    background-color: #f6f6f6;
+    font-family: monospace;
+    white-space: pre;
+    display: block;
+    overflow-x: auto;
+    margin: 15px 0px;
+    font-size: 16px;
+}
+
+p
+{
+    font-size: 18px;
+    line-height: 26px;
+    color: #575757;
+    text-align: justify;
+    margin-left: 7px;
+    margin-right: 7px;
+}
+
+.button
+{
+    color: white;
+    border: 12px solid transparent;
+    border-image-source: url(../Images/green_button08.png);
+    border-image-slice: 16 fill;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+
+
+/*--------------FOR MOBILE--------------*/
 @media only screen and (max-width: 768px)
 {
     .secAdapting
     {
-        border: none;
+        border: hidden;
         background-color: white;
         width: calc(100% - 14px);
         padding-left: 7px;
@@ -89,5 +105,15 @@ code
     body
     {
         margin: 0;
+        background-image: none;
+        font-size: 12px;
+    }
+    p
+    {
+        font-size: 12px;
+    }
+    code
+    {
+        font-size: 10px;
     }
 }
