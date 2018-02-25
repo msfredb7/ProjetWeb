@@ -110,10 +110,11 @@ p
     }
     p
     {
-        font-size: 12px;
+        font-size: 14px;
+        line-height: 22px;
     }
     code
     {
-        font-size: 10px;
+        font-size: 11px;
     }
 }
