@@ -17,23 +17,33 @@
 <pre>
 <code><span class="cKeyword">namespace</span> <span class="cClass">GPC</span>
 {
+    <span class="cComment">// Bad method</span>
     <span class="cKeyword">void</span> Start()
     {
         if (flashOnStart)
-            Flash();
+            <a href="htmls/SomePage.html">Flash()</a>;
     }
     
+    <span class="cComment">// Good method</span>
     <span class="cPositive"><span class="cKeyword">public void</span> Stop()
     {
         if (tween != <span class="cKeyword">null</span> && speed < 10)
             tween.Kill();
     }</span>
     
+    <span class="cComment">// Bad method</span>
     <span class="cNegative"><span class="cKeyword">public void</span> Stop()
     {
         if (tween != <span class="cKeyword">null</span> && speed < 10)
             tween.Kill();
     }</span>
+
+    <span class="cComment">// Beaucoup trop long commentaire qui prend tout le screen, c'en est désagréable. Vraiment, faudrait quelque chose, arretez le quelqu'un!!!! aaahhh!</span>
+    <span class="cKeyword">void</span> Start()
+    {
+        if (flashOnStart)
+            <a href="htmls/SomePage.html">Flash()</a>;
+    }
 }</code>
 </pre>
 

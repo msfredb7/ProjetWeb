@@ -1,45 +1,58 @@
 ﻿body
 {
-    font-family:Calibri;
+    font-family: Calibri;
 }
 
-.codeComment
+.cComment
 {
-    color:#7c7c7c;
+    color: #a9a9a9;
 }
+
 .cClass
 {
     color: #10b7e8;
 }
+
 .cKeyword
 {
     color: blue;
 }
+
 .cPositive
 {
-    background-color: #c3f6bc;
+    background-color: #cdf7c8;
 }
+
 .cNegative
 {
-    background-color: #f6cfc9;
+    background-color: #f6e0dd;
 }
+
+    code > a, .cNegative > a, .cPositive > a, .cKeyword > a, cClass > a
+    {
+        color: deepskyblue;
+        text-decoration: underline;
+        border: none;
+        font-weight: normal;
+    }
+
 code
 {
     border: 3px dashed #c4c4c4;
     padding: 10px;
     background-color: #f6f6f6;
-
     font-family: monospace;
     white-space: pre;
     display: block;
+    overflow-x:auto;
 }
 
 a
 {
-    color:white;
+    color: white;
     border: 12px solid transparent;
     border-image-source: url(../Images/green_button08.png);
     border-image-slice: 16 fill;
     text-decoration: none;
-    font-weight:bold;
+    font-weight: bold;
 }
