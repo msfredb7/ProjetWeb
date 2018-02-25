@@ -62,15 +62,15 @@ code
 
 .section
 {
-    border: 12px solid transparent;
-    border-image-source: url(../Images/panel_bg.png);
-    border-image-slice: 15 fill;
     margin-left: auto;
     margin-right: auto;
 }
 
 .secAdapting
 {
+    border: 12px solid transparent;
+    border-image-source: url(../Images/panel_bg.png);
+    border-image-slice: 15 fill;
     width: 75%;
     padding: 25px 60px;
 }
@@ -79,6 +79,7 @@ code
 {
     .secAdapting
     {
+        border:none;
         width: calc(100% - 14px);
         padding-left: 7px;
         padding-right: 7px;
