@@ -3,9 +3,35 @@
     font-family:Calibri;
 }
 
-.code
+.codeComment
 {
-    font-family: 'Courier New';
+    color:#7c7c7c;
+}
+.cClass
+{
+    color: #10b7e8;
+}
+.cKeyword
+{
+    color: blue;
+}
+.cPositive
+{
+    background-color: #c3f6bc;
+}
+.cNegative
+{
+    background-color: #f6cfc9;
+}
+code
+{
+    border: 3px dashed #c4c4c4;
+    padding: 10px;
+    background-color: #f6f6f6;
+
+    font-family: monospace;
+    white-space: pre;
+    display: block;
 }
 
 a
