@@ -1,4 +1,6 @@
-﻿.cComment
+﻿
+/*--------------IN CODE--------------*/
+.cComment
 {
     color: #a9a9a9;
 }
@@ -25,10 +27,26 @@
 
 .cLink
 {
-    color: deepskyblue;
+    color: #5cb5ec;
     text-decoration: underline;
     border: none;
     font-weight: normal;
+}
+
+/*--------------MISC--------------*/
+.inlineBlock
+{
+    display: inline-block;
+}
+
+.hideOnMobile
+{
+    visibility: visible;
+}
+
+.hideOnPC
+{
+    visibility: hidden;
 }
 
 /*--------------TOP LEVEL--------------*/
@@ -37,22 +55,91 @@ body
     font-family: 'Open Sans', sans-serif;
     background-image: url(../Images/perforated_bg.png);
     font-size: 16px;
+    margin: 0;
+    padding: 0;
 }
 
 .section
 {
     margin-left: auto;
     margin-right: auto;
+    z-index: -1;
+    margin-bottom: 150px;
 }
 
 .secAdapting
 {
+    margin-top: 70px;
     border: 12px solid transparent;
     border-image-source: url(../Images/panel_bg.png);
     border-image-slice: 15 fill;
-    width: 75%;
+    width: 65%;
     padding: 25px 60px;
+    padding-bottom: 75px;
 }
+
+#banner
+{
+    border: 12px solid transparent;
+    border-image-source: url(../Images/panel_bg_blue.png);
+    border-image-slice: 15 fill;
+    border-image-outset: 5px;
+    color: white;
+    margin: 0;
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}
+
+.menu
+{
+    position: absolute;
+    top: 18px;
+    padding: 0;
+    left: 212px;
+    text-align: left;
+}
+
+#banner > ul > li
+{
+    display: inline-block;
+    margin: 0px 10px;
+}
+
+    #banner > ul > li > a
+    {
+        text-decoration: none;
+        text-align: center;
+        font-size: 25px;
+        color: white;
+        font-weight: bold;
+        border-bottom: 4px solid white;
+    }
+
+        #banner > ul > li > a:hover
+        {
+            color: #69BBFD;
+            background-color: white;
+        }
+
+#ccc
+{
+    font-size: 85px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: -20px;
+    position: relative;
+}
+
+    #ccc:hover
+    {
+        color: #d7edff;
+    }
 
 /*--------------IN DOC--------------*/
 code
@@ -74,8 +161,30 @@ p
     line-height: 26px;
     color: #575757;
     text-align: justify;
-    margin-left: 7px;
-    margin-right: 7px;
+}
+
+h1
+{
+    font-size: 55px;
+    color: #2c2c2c;
+    margin-top: 1.2em;
+    margin-bottom: 0.8em;
+}
+
+h2
+{
+    font-size: 35px;
+    color: #2c2c2c;
+    margin-top: 1.2em;
+    margin-bottom: 0.8em;
+}
+
+h3
+{
+    font-size: 22px;
+    color: #808080;
+    margin-top: 1.2em;
+    margin-bottom: 0.8em;
 }
 
 .button
@@ -95,6 +204,7 @@ p
 {
     .secAdapting
     {
+        margin-top: 40px;
         border: hidden;
         background-color: white;
         width: calc(100% - 14px);
@@ -104,17 +214,74 @@ p
 
     body
     {
-        margin: 0;
         background-image: none;
         font-size: 12px;
     }
+
+    h1
+    {
+        font-size: 44px;
+    }
+
+    h2
+    {
+        font-size: 28px;
+    }
+
+    h3
+    {
+        font-size: 18px;
+    }
+
+    section > p, section > h1, section > h2, section > h3, section > a
+    {
+        margin-left: 7px;
+        margin-right: 7px;
+    }
+
     p
     {
         font-size: 14px;
         line-height: 22px;
     }
+
     code
     {
         font-size: 11px;
+    }
+
+    #ccc
+    {
+        margin-left: -3px;
+        font-size: 65px;
+    }
+
+    .menu
+    {
+        top: 12px;
+        text-align: right;
+        left: 0;
+        right: 6%;
+    }
+
+    #banner
+    {
+        height: 76px;
+    }
+
+        #banner > ul > li > a
+        {
+            font-size: 18px;
+            border-bottom-width: 3px;
+        }
+
+    .hideOnMobile
+    {
+        visibility: hidden;
+    }
+
+    .hideOnPC
+    {
+        visibility: visible;
     }
 }
