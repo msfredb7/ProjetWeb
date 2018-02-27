@@ -8,21 +8,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>CCC Documentation</title>
-    <link rel="stylesheet" type="text/css" href="styles/SomeStyle.css">
-    <script src="js/HtmlLoader.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="/ProjetWeb/styles/SomeStyle.css">
+    <script src="/ProjetWeb/js/HtmlLoader.js"></script>
 </head>
 
 
 
 <body>
-    <div w3-include-html="htmls/header.html"></div>
+    <div w3-include-html="/ProjetWeb/htmls/header.html"></div>
 
     <section class="section secAdapting">
         <h1>What's CCC ?</h1>
         <p>
             Control of an object's position through physics simulation.
-            <br /><br />Adding a <a href="/htmls/doc/some_page.html" class="cLink">Rigidbody</a> component to an object will put its motion under the control of Unity's physics engine. Even without adding any code, a Rigidbody object will be pulled downward by gravity and will react to collisions with incoming objects if the right Collider component is also present.
+            <br /><br />Adding a <a href="/ProjetWeb/htmls/doc/some_page.html" class="cLink">Rigidbody</a> component to an object will put its motion under the control of Unity's physics engine. Even without adding any code, a Rigidbody object will be pulled downward by gravity and will react to collisions with incoming objects if the right Collider component is also present.
             <br /><br />The Rigidbody also has a scripting API that lets you apply forces to the object and control it in a physically realistic way. For example, a car's behaviour can be specified in terms of the forces applied by the wheels. Given this information, the physics engine can handle most other aspects of the car's motion, so it will accelerate realistically and respond correctly to collisions.
             <br /><br />In a script, the FixedUpdate function is recommended as the place to apply forces and change Rigidbody settings (as opposed to Update, which is used for most other frame update tasks). The reason for this is that physics updates are carried out in measured time steps that don't coincide with the frame update. FixedUpdate is called immediately before each physics update and so any changes made there will be processed directly.
             <br /><br />A common problem when starting out with Rigidbodies is that the game physics appears to run in "slow motion". This is actually due to the scale used for your models. The default gravity settings assume that one world unit corresponds to one metre of distance. With non-physical games, it doesn't make much difference if your models are all 100 units long but when using physics, they will be treated as very large objects. If a large scale is used for objects that are supposed to be small, they will appear to fall very slowly - the physics engine thinks they are very large objects falling over very large distances. With this in mind, be sure to keep your objects more or less at their scale in real life (so a car should be about 4 units = 4 metres, for example).
