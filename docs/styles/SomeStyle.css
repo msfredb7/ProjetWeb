@@ -206,11 +206,17 @@ h4
     font-weight: bold;
     display: inline-block;
 }
+
 .center
 {
-    display:block;
+    display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+section > img
+{
+    max-width: 100%;
 }
 
 /*--------------FOR MOBILE--------------*/
