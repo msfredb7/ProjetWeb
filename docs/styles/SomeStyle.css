@@ -33,6 +33,14 @@
     font-weight: normal;
 }
 
+.nLink
+{
+    color: #5cb5ec;
+    text-decoration: none;
+    border: none;
+    font-weight: normal;
+}
+
 /*--------------MISC--------------*/
 .inlineBlock
 {
@@ -69,7 +77,7 @@ body
 
 .secAdapting
 {
-    margin-top: 70px;
+    margin-top: 90px;
     border: 12px solid transparent;
     border-image-source: url(../Images/panel_bg.png);
     border-image-slice: 15 fill;
@@ -83,11 +91,11 @@ body
     border: 12px solid transparent;
     border-image-source: url(../Images/panel_bg_blue.png);
     border-image-slice: 15 fill;
-    border-image-outset: 5px;
+    border-image-outset: 5px 12px;
     color: white;
     margin: 0;
     height: 100px;
-    width: 100%;
+    width: calc(100% - 24px);
     position: absolute;
     top: 0;
     z-index: 2;
@@ -167,24 +175,25 @@ h1
 {
     font-size: 55px;
     color: #2c2c2c;
-    margin-top: 1.2em;
-    margin-bottom: 0.8em;
 }
 
 h2
 {
     font-size: 35px;
     color: #2c2c2c;
-    margin-top: 1.2em;
-    margin-bottom: 0.8em;
 }
 
 h3
 {
     font-size: 22px;
     color: #808080;
-    margin-top: 1.2em;
-    margin-bottom: 0.8em;
+}
+
+h4
+{
+    font-size: 20px;
+    color: #2c2c2c;
+    font-weight: bold;
 }
 
 .button
@@ -197,14 +206,19 @@ h3
     font-weight: bold;
     display: inline-block;
 }
-
+.center
+{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /*--------------FOR MOBILE--------------*/
 @media only screen and (max-width: 768px)
 {
     .secAdapting
     {
-        margin-top: 40px;
+        margin-top: 80px;
         border: hidden;
         background-color: white;
         width: calc(100% - 14px);
@@ -231,6 +245,11 @@ h3
     h3
     {
         font-size: 18px;
+    }
+
+    h4
+    {
+        font-size: 15px;
     }
 
     section > p, section > h1, section > h2, section > h3, section > a

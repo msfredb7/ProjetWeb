@@ -1,0 +1,85 @@
+﻿
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CCC - Tri-Colored Sprite</title>
+    <link rel="stylesheet" type="text/css" href="/ProjetWeb/styles/SomeStyle.css">
+    <script src="/ProjetWeb/js/HtmlLoader.js"></script>
+</head>
+
+
+
+<body>
+    <div w3-include-html="/ProjetWeb/htmls/header.html"></div>
+
+    <section class="section secAdapting">
+        <h1>Tri-Colored Sprite</h1>
+        <p>
+            Tri-Colored Sprite is a set of asset that allows you to easily render the same sprites with different colors. The system works
+            with a trio of color. Each specified color will be applied to a one of the 3 RGB channels. The final pixel color will be calculate as such:
+        </p>
+        <h4>
+            pixelColor = (spriteR * colorA) + (spriteG * colorB) + (spriteB * colorC);
+        </h4>
+        <br />
+        <h2>TriColored Component</h2>
+        <p>
+            The TriColored Component is a component that can be added to any GameObject with the SpriteRenderer component. The component will
+            change the SpriteRenderer's shader and apply the Tri-Colored pattern with it's three colors.
+        </p>
+        <p>
+            Let's look at an example. Here we have the original image of a canon. Without the Tri-Colored pattern applied, it doesn't look so good.
+            That's because the 3 color channels have been specifically arranged to be used with the technique. In our case the first channel (R)
+            represents the lighting. Most of the image is black, but everywhere light would normally create shades or reflections, the value gets closer
+            to 1. The remaining two channels (G and B) each represent the base color of a part of the canon. That way, we can easily change the color of
+            the tubes independently from the main frame.
+        </p>
+        <img src="/ProjetWeb/Images/doc/2D/tricoloredsprite/3channels.png" class="center" />
+        <br /><br />
+        <p>
+            Now let's add a TriColored component to our sprite and set it's 3 colors to:
+            <br />(R) light: grey
+            <br />(G) color X: orange
+            <br />(B) color Y: dark metallic blue
+        </p>
+        <img src="/ProjetWeb/Images/doc/2D/tricoloredsprite/effect.png" class="center" />
+        <br /><br />
+        <p>
+            If we were to change the 3rd color (B) to, let's say, green, only the canon's tubes would get affected.
+        </p>
+        <img src="/ProjetWeb/Images/doc/2D/tricoloredsprite/effect2.png" class="center" />
+        <br /><br />
+        <p>
+            This rendering technique allows you to render the same sprite with many different colors. However, it should be noted that this technique
+            only allows for a sprite to be composed of 3 additive colors. This means the Tri-Colored pattern is not helpful in every cases.
+        </p>
+        <br />
+        <h2>Scripting</h2>
+        <p>
+            Modifying the color values of the TriColored component is fairly straight-forward. However, if you want to modify more than one color at a
+            time, you may use the SetColors(...) method instead of the standard properties to save a bit of CPU time.
+        </p>
+        
+
+<code><span class="cClass">TriColored</span> triColored = GetComponent&lt;<span class="cClass">TriColored</span>&gt;();
+        
+<span class="cComment">// Set individual properties</span>
+triColored.ColorR = <span class="cClass">Color</span>.red;
+triColored.ColorG = <span class="cClass">Color</span>.white;
+triColored.ColorB = <span class="cClass">Color</span>.black;
+
+<span class="cComment">// OR set them all at once</span>
+triColored.SetColors(<span class="cClass">Color</span>.red, <span class="cClass">Color</span>.white, <span class="cClass">Color</span>.black);</code>
+    </section>
+</body>
+</html>
+
+
+<script>
+    includeHTML();
+</script>
