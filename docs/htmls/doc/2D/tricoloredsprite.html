@@ -59,7 +59,7 @@
         <br /><br />
         <p>
             This rendering technique allows you to render the same sprite with many different colors. However, it should be noted that this technique
-            only allows for a sprite to be composed of 3 additive colors. This means the Tri-Colored pattern is not helpful in every cases.
+            only allows sprites to be composed of 3 additive colors. This means the Tri-Colored pattern is not helpful in every cases.
         </p>
         <br />
         <h2>Scripting</h2>
@@ -67,17 +67,19 @@
             Modifying the color values of the TriColored component is fairly straight-forward. However, if you want to modify more than one color at a
             time, you may use the SetColors(...) method instead of the standard properties to save a bit of CPU time.
         </p>
-        
 
-<code><span class="cClass">TriColored</span> triColored = GetComponent&lt;<span class="cClass">TriColored</span>&gt;();
-        
-<span class="cComment">// Set individual properties</span>
-triColored.ColorR = <span class="cClass">Color</span>.red;
-triColored.ColorG = <span class="cClass">Color</span>.white;
-triColored.ColorB = <span class="cClass">Color</span>.black;
 
-<span class="cComment">// OR set them all at once</span>
-triColored.SetColors(<span class="cClass">Color</span>.red, <span class="cClass">Color</span>.white, <span class="cClass">Color</span>.black);</code>
+        <code>
+            <span class="cClass">TriColored</span> triColored = GetComponent&lt;<span class="cClass">TriColored</span>&gt;();
+
+            <span class="cComment">// Set individual properties</span>
+            triColored.ColorR = <span class="cClass">Color</span>.red;
+            triColored.ColorG = <span class="cClass">Color</span>.white;
+            triColored.ColorB = <span class="cClass">Color</span>.black;
+
+            <span class="cComment">// OR set them all at once</span>
+            triColored.SetColors(<span class="cClass">Color</span>.red, <span class="cClass">Color</span>.white, <span class="cClass">Color</span>.black);
+        </code>
     </section>
 </body>
 </html>
