@@ -259,7 +259,7 @@ section > img
         font-size: 15px;
     }
 
-    section > p, section > h1, section > h2, section > h3, section > a
+    section > p, section > h1, section > h2, section > h3, section > a, section > h4
     {
         margin-left: 7px;
         margin-right: 7px;
