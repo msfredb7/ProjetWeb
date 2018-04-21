@@ -41,6 +41,13 @@
     font-weight: normal;
 }
 
+.unityDemo{
+    width:100%;
+    height:500px;
+    border:1px solid #ccc;
+    overflow:hidden;
+}
+
 /*--------------MISC--------------*/
 .inlineBlock
 {
@@ -309,5 +316,8 @@ section > img
     .hideOnPC
     {
         visibility: visible;
+    }
+    .unityDemo{
+        height:300px;
     }
 }
