@@ -20,11 +20,38 @@
     <section class="section secAdapting">
         <h1>What's CCC ?</h1>
         <p>
-            Control of an object's position through physics simulation.
-            <br /><br />Adding a <a href="/ProjetWeb/htmls/doc/some_page.html" class="cLink">Rigidbody</a> component to an object will put its motion under the control of Unity's physics engine. Even without adding any code, a Rigidbody object will be pulled downward by gravity and will react to collisions with incoming objects if the right Collider component is also present.
-            <br /><br />The Rigidbody also has a scripting API that lets you apply forces to the object and control it in a physically realistic way. For example, a car's behaviour can be specified in terms of the forces applied by the wheels. Given this information, the physics engine can handle most other aspects of the car's motion, so it will accelerate realistically and respond correctly to collisions.
-            <br /><br />In a script, the FixedUpdate function is recommended as the place to apply forces and change Rigidbody settings (as opposed to Update, which is used for most other frame update tasks). The reason for this is that physics updates are carried out in measured time steps that don't coincide with the frame update. FixedUpdate is called immediately before each physics update and so any changes made there will be processed directly.
-            <br /><br />A common problem when starting out with Rigidbodies is that the game physics appears to run in "slow motion". This is actually due to the scale used for your models. The default gravity settings assume that one world unit corresponds to one metre of distance. With non-physical games, it doesn't make much difference if your models are all 100 units long but when using physics, they will be treated as very large objects. If a large scale is used for objects that are supposed to be small, they will appear to fall very slowly - the physics engine thinks they are very large objects falling over very large distances. With this in mind, be sure to keep your objects more or less at their scale in real life (so a car should be about 4 units = 4 metres, for example).
+            CCC is a collection of useful C# scripts built for Unity.<br />
+            <br />
+            They range from neat Property Drawers to complex mathematical algorithms and more. The best way to get a grasp of what CCC is
+            would simply be to explore the <a href="/ProjetWeb/htmls/documentation.html" class="cLink">documentation</a>. Here's a brief
+            overview of some of the things you'll find in CCC:
+            <br />
+            <br /> &emsp;&emsp;-&emsp;Persistent object management tools that help you set up a collection of global managers quickly
+            <br /> &emsp;&emsp;-&emsp;Alternative sprite coloring techniques
+            <br /> &emsp;&emsp;-&emsp;Common UI animations
+            <br /> &emsp;&emsp;-&emsp;Useful field attributes that provide fast and easy ways to adapt the inspector to your needs
+            <br /> &emsp;&emsp;-&emsp;Audio systems that solve common development pattern problems
+            <br /> &emsp;&emsp;-&emsp;Type extensions that make your code smaller and more readable
+            <br /> &emsp;&emsp;-&emsp;Various mathematical tools that help you control your numbers the way you want
+            <br /> &emsp;&emsp;-&emsp;File serialization systems that make loading and saving quite easier and faster
+            <br /> &emsp;&emsp;-&emsp;Various useful data structures
+            <br /> &emsp;&emsp;-&emsp;A list of time-saving UI classes like 'Infinite Scrollers'
+            <br /> &emsp;&emsp;-&emsp;And more...
+        </p>
+        <br />
+        <h2>Can I use CCC freely?</h2>
+        <p>
+            Absolutely! You can use/modify every CCC script however you want. The code base is entirely royalty-free and open source.
+            This means giving CCC credit is appreciated but not mandatory :)
+        </p>
+        <br />
+        <h2>What's the story behind CCC?</h2>
+        <p>
+            The CCC library was gradually built by myself (Frederic Bessette) across several game projects. I began aggregating some of
+            my scripts that were project-independent about a year ago. Many assets were added, modified or completely deleted across the months.
+            Now, I feel like the library is sufficiently 'clean' to be shared. However, none of the scripts are perfects. Some are unfinished,
+            and others violate good coding practices, so take this library with a grain of salt.
+            <br /> NB: Some of the scripts and systems were inspired by others shared on the internet.
         </p>
     </section>
 </body>
