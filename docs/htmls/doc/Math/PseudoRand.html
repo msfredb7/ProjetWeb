@@ -59,7 +59,7 @@
             <p>
                 Aimed success rate: <input id="sr" type="range" min="0" max="100" ng-model="successRate" oninput="UpdateValues();"
                                            onchange="UpdateValues();" /> <span ng-bind="successRate"></span>%<br />
-                Hardness: <input id="h" type="range" min="0" max="1" step="0.1" ng-model="hardness" oninput="UpdateValues();"
+                Hardness: <input id="h" type="range" min="0" max="1" step="0.02" ng-model="hardness" oninput="UpdateValues();"
                                  onchange="UpdateValues();" /> <span ng-bind="hardness"></span>
             </p>
             <button onclick="Pick(1);"><p>&emsp;Test!&emsp;</p></button>
