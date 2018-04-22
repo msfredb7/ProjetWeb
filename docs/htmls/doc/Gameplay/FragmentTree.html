@@ -15,7 +15,7 @@
             position: relative;
             width: 100%;
             padding-top: 35%; /* 4:3 Aspect Ratio */
-            border:1px solid #ccc;
+            border: 1px solid #ccc;
         }
 
         .frame
@@ -23,8 +23,7 @@
             border: 0px;
             align-content: center;
             width: 100%;
-            height:100%;
-
+            height: 100%;
             position: absolute;
             top: 0;
             left: 0;
@@ -41,36 +40,36 @@
     <section class="section secAdapting">
         <h1>Fragment Tree</h1>
         <p>
-            Never Reaching Curve is a mathematical curve stored as a object. More specifically, it represents an instance of a rational function
-            (a function that can be expressed as a rational fraction). The instance will return a Y value when you prompt it with an X value.
-            The function is defined with 4 parameters as such:
+            Fragment Tree is a <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.html" class="cLinkg">MonoBehaviour</a> that controls
+            a group of structure pieces (called fragments) to mimic the behaviour of a destructible solid.
         </p>
-        <h4>Parameters</h4>
+        <h2>The way it works</h2>
         <p>
-            a = The lowest value you expect the curve to return (inclusive)<br />
-            b = The highest value you expect the curve to return (exclusive)<br />
-            minX = The lowest input value (X) you expect to prompt the curve with<br />
-            speed = The level of curvature. The higher the value, the faster the curve will get close to B
+            To make Fragment Tree work, you will need to have a pre-fragmented model of your structure. This can easily be achieved with free softwares
+            like Blender. The Fragment Tree works by first scanning the model. It will detect any intersecting fragments and link them together as
+            neighbors. The collection of all linked shapes is represented by the fragment tree.
         </p>
-        <h4>Formula</h4>
-        <p>
-            y = (1 / speed * (-x + minX + (1 / speed * (a - b)))) + b
-        </p>
+        <img src="/ProjetWeb/Images/doc/Gameplay/FragmentTree/fragmentNodes.png" class="center" />
 
         <br />
         <p>
-            If we were to use the following parameter values:
-            <br />&emsp;a = 0
-            <br />&emsp;b = 4
-            <br />&emsp;minX = 2
-            <br />&emsp;speed = 0.5
-            <br />the curve would look like this:
+            Once the graph is setup, the Fragment Tree will react to incoming physical impacts. It will compare the force received to the material
+            hardness and decide weather the fragment breaks of the structure or not. The impact will also be propagated to neighboring fragments
+            based on their distance, their orientation and the material's elasticity. This means the destruction behaviour is controlled by only
+            2 properties:<br />
+            <h4>
+                &emsp;Hardness = The impact forced needed to break fragment links
+                <br />&emsp;Elasticity = The propagation of the impact force. More elasticity means the impact will not propagate far
+            </h4>
+            One of the strengths of Fragment Tree is that once disturbed by an impact, the fragments can break off into other fragment trees.
+            You could, for instance, break a long metal rod into two seperate medium-length rods that could then be broken down again.
         </p>
 
-        <!--<div class="container">-->
-            <!--src="/ProjetWeb/UnityDemos/DestructionTest/destructiondemo.html"-->
-            <iframe src="/ProjetWeb/UnityDemos/DestructionTest/destructiondemo.html" class="unityDemo" scrolling="no"></iframe>
-        <!--</div>-->
+        <br />
+        <br />
+        <h2>Playable Demo</h2>
+
+        <iframe src="/ProjetWeb/UnityDemos/DestructionTest/destructiondemo.html" class="unityDemo" scrolling="no"></iframe>
 
     </section>
 </body>

@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CCC - Pseudo Rand</title>
+    <link rel="stylesheet" type="text/css" href="/ProjetWeb/styles/SomeStyle.css">
+    <script src="/ProjetWeb/js/HtmlLoader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="/ProjetWeb/js/doc/Math/PseudoRand.js"></script>
+    <style>
+        .green
+        {
+            color: #00b217;
+        }
+
+        .red
+        {
+            color: #d70000;
+        }
+
+        .odds
+        {
+            color: #cfcfcf;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div w3-include-html="/ProjetWeb/htmls/header.html"></div>
+
+    <section class="section secAdapting">
+        <div ng-app="">
+            <h1>Pseudo Rand</h1>
+            <p>
+                PseudoRand is a class that manages an stream of assisted random 'true' or 'false'. When prompted to pick a result, it will
+                return either true of false. You can control the object with it's 2 main parameters:<br />
+                <br />
+                &emsp;<span class="bold">Success Rate:</span> The ratio of true/false we're trying to obtain (between 0 and 1)<br />
+                &emsp;<span class="bold">Hardness:</span> The amount of assist the object will use to reach the desired success rate (between 0 and 1)<br />
+                <br />
+                PseudoRand wiill always strive to obtain the desired <span class="bold">Success Rate</span>. It will do
+                so using it's hardness. A PseudoRand with a hardness of 0 will receive no assit. This would simply be like
+                using the unassisted <a class="cLink" href="https://docs.unity3d.com/ScriptReference/Random.html">Random</a>.value to pick true or false. With a hardness of 1, PseudoRand will
+                perfectly follow the desired <span class="bold">Success Rate</span>. With a success rate of 50% for example, the resulting stream would
+                only be a sequence of alternative true, false, true, false, etc.<br />
+                <br />
+                PseudoRand is very useful when we're trying to generate randomness while maintaining game balance. Examples of use case:<br />
+                &emsp; - Critical strike chances<br />
+                &emsp; - Item drop rates<br />
+                &emsp; - Etc.<br />
+            </p>
+            <br />
+            <h2>Demo</h2>
+            <p>
+                Aimed success rate: <input id="sr" type="range" min="0" max="100" ng-model="successRate" oninput="UpdateValues();"
+                                           onchange="UpdateValues();" /> <span ng-bind="successRate"></span>%<br />
+                Hardness: <input id="h" type="range" min="0" max="1" step="0.1" ng-model="hardness" oninput="UpdateValues();"
+                                 onchange="UpdateValues();" /> <span ng-bind="hardness"></span>
+            </p>
+            <button onclick="Pick(1);"><p>&emsp;Test!&emsp;</p></button>
+            <button onclick="Pick(10);"><p>&emsp;Test! x 10&emsp;</p></button>
+            <p>
+                <button onclick="Reset();">reset</button><br />
+                <span class="odds">Next test odds: <span id="odds"></span>0%</span><br />
+                Result: <span id="result">----</span><br />
+                Success rate so far: <span id="successRateSoFar">--%  (0 / 0)</span>
+            </p>
+        </div>
+    </section>
+</body>
+</html>
+
+
+<script>
+    includeHTML();
+    UpdateValues();
+</script>
