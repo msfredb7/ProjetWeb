@@ -233,6 +233,29 @@ section > img
     max-width: 100%;
 }
 
+@keyframes panelShow
+{
+    from
+    {
+        left: -88%;
+    }
+
+    to
+    {
+        left: 0px;
+    }
+}
+
+#panelContainer
+{
+    background-color: aqua;
+    width: 90%;
+    height: 300px;
+    left: -88%;
+    top: 150px;
+    position: fixed;
+}
+
 /*--------------FOR MOBILE--------------*/
 @media only screen and (max-width: 768px)
 {
