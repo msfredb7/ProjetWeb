@@ -11,6 +11,7 @@ var yDown = null;
 var threshold = 0.15;
 var pressTime = null;
 var maxDuration = 0.2 * 1000;
+var leftBorder = 0.3;
 
 function Log()
 {
@@ -48,14 +49,15 @@ function handleTouchMove(evt)
     {
         if (xDiff > 0)
         {
-            // Left swipe
-            console.log("left swipe");
-            TweenMax.to("#panelContainer", 0.35, { left: "-88%" });
+            // Close !
+            TweenMax.to("#panelContainer", 0.24, { left: "-73%" });
         } else
         {
-            // Right swipe
-            console.log("right swipe");
-            TweenMax.to("#panelContainer", 0.35, { left: 0 });
+            // Open !
+            // Top à droite ?
+            if (xDown > leftBorder * document.body.clientWidth)
+                return;
+            TweenMax.to("#panelContainer", 0.24, { left: "-10%" });
         }
     }
     else
